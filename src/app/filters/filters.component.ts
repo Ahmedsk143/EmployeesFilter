@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { skip } from 'rxjs/operators';
 import formData from '../form-data.json';
-import { SpinnerService } from '../services/spinner.service';
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
@@ -17,11 +16,7 @@ export class FiltersComponent implements OnInit {
   salary: number | null = null;
   selectedDep: string | null = null;
   selectedExpereinces: string[] | null = null;
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private spinnerService: SpinnerService
-  ) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
   ngOnInit(): void {
     this.departments = formData.departments;
     this.expereinces = formData.experinces;
@@ -46,7 +41,6 @@ export class FiltersComponent implements OnInit {
             .forEach((e: string) => {
               this.selectedExpereinces!.push(e);
             });
-
           this.selectedExpereinces = this.selectedExpereinces!.slice();
         }
       },
@@ -54,7 +48,6 @@ export class FiltersComponent implements OnInit {
     });
   }
   applyFilter() {
-    // this.spinnerService.loading.next(true);
     const queryS = this.buildQueryString({
       name: this.name,
       date: this.date ? this.date.getTime() : this.date,

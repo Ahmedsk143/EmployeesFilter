@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { skip } from 'rxjs';
 import { Employee } from '../models/employee.model';
 import { FilterParams } from '../models/filter-params.model';
@@ -16,7 +16,6 @@ export class EmployeesComponent implements OnInit {
   employeesFiltered: Employee[] = [];
 
   filterParams: FilterParams = {};
-  filterParamsKeys: string[] = [];
   constructor(
     private employeeService: EmployeesService,
     private route: ActivatedRoute,
@@ -42,10 +41,11 @@ export class EmployeesComponent implements OnInit {
         if (params['date']) {
           this.filterParams.date = params['date'];
         }
-        console.log('this.filterParams', this.filterParams);
         this.filterEmployees();
       },
-      error: (err) => {},
+      error: (err) => {
+        console.log(err);
+      },
     });
   }
   getEmployees() {
@@ -62,9 +62,6 @@ export class EmployeesComponent implements OnInit {
     });
   }
   filterEmployees() {
-    console.log(this.filterParams);
-    console.log(this.employees);
-    console.log(this.employeesFiltered);
     this.employeesFiltered = this.employees.filter((emp) => {
       let isValid = true;
       for (let key of Object.keys(this.filterParams)) {
@@ -117,7 +114,6 @@ export class EmployeesComponent implements OnInit {
           }
         }
       }
-      console.log('is Valied', isValid);
       return isValid;
     });
     this.spinnerService.loading.next(false);
@@ -145,15 +141,12 @@ export class EmployeesComponent implements OnInit {
     for (let ex of exp2.split(',')) {
       if (ex[0] == 'L') {
         isValid1 = exp1 < 1;
-        // return exp1 < 1;
       }
       if (ex[0] == 'F') {
         isValid2 = exp1 >= 1 && exp1 < 3;
-        // return exp1 >= 1 && exp1 < 3;
       }
       if (ex[0] == '3') {
         isValid3 = exp1 >= 3;
-        // return exp1 >= 3;
       }
     }
     return isValid1 || isValid2 || isValid3;

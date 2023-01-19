@@ -54,6 +54,22 @@ h6 {
   background-color: rgba(19, 17, 26, 0.651);
   backdrop-filter: blur(1px);
 }
+
 .p-datatable > .p-datatable-wrapper {
   border-radius: 4px;
+}
+.gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-color: #13111a9e;
 }
