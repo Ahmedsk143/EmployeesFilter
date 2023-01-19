@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::after,
+*::before {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: inherit;
+}
+html {
+  font-size: 16px;
+}
+body {
+  box-sizing: border-box;
+  background-color: #13111a;
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: #fff;
+}
+
+a {
+  list-style: none;
+}
+ul,
+li {
+  list-style: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  transition: all 0.4s linear;
+  &:has(#filters.collapse) {
+    grid-template-columns: 4.5rem 1fr;
+    transition: all 0.4s linear;
+  }
+}
+.spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(19, 17, 26, 0.651);
+  backdrop-filter: blur(1px);
+}
+.p-datatable > .p-datatable-wrapper {
+  border-radius: 4px;
+}

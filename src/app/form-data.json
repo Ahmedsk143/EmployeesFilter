@@ -1,0 +1,9 @@
+{
+  "departments": [
+    "Administration",
+    "Marketing",
+    "Human resources",
+    "Customer service"
+  ],
+  "experinces": ["Less than a year", "From 1-3 years", "3 years or above"]
+}

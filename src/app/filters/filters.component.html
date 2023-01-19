@@ -1,0 +1,70 @@
+<div id="filters" [ngClass]="{ collapse: collpased }">
+  <i class="pi pi-bars" (click)="collpased = !collpased"></i>
+  <h2 class="title">Filter Panel</h2>
+  <div class="input-group">
+    <label for="name">Name</label>
+    <input inputId="name" type="text" pInputText [(ngModel)]="name" />
+  </div>
+  <div class="input-group">
+    <label for="date">Joining Date</label>
+    <p-calendar
+      inputId="date"
+      [(ngModel)]="date"
+      [style]="{ minWidth: '100%', maxWidth: '100%' }"
+    ></p-calendar>
+  </div>
+  <div class="input-group">
+    <label for="department">Department</label>
+    <p-dropdown
+      inputId="department"
+      [options]="departments"
+      [(ngModel)]="selectedDep"
+      placeholder="Select a Department"
+      [style]="{ minWidth: '100%', maxWidth: '100%' }"
+    ></p-dropdown>
+  </div>
+  <div class="input-group">
+    <label for="salary">Salary</label>
+    <p-inputNumber
+      inputId="salary"
+      [(ngModel)]="salary"
+      [showButtons]="true"
+      mode="currency"
+      currency="EGP"
+      [maxFractionDigits]="0"
+      [step]="100"
+      [min]="3000"
+      [style]="{ minWidth: '100%', maxWidth: '100%' }"
+    ></p-inputNumber>
+  </div>
+  <div class="input-group">
+    <label for="expereince">Expereince</label>
+    <p-multiSelect
+      inputId="expereince"
+      [options]="expereinces"
+      [(ngModel)]="selectedExpereinces"
+      placeholder="Selecet a Level"
+      [filter]="false"
+      [style]="{ minWidth: '100%', maxWidth: '14rem', color: '#6c757d' }"
+    ></p-multiSelect>
+  </div>
+  <div class="action">
+    <button
+      pButton
+      type="button"
+      icon="pi pi-undo"
+      iconPos="left"
+      label="Clear"
+      (click)="clearForm()"
+      class="p-button-outlined"
+    ></button>
+    <button
+      pButton
+      type="button "
+      icon="pi pi-filter"
+      iconPos="left"
+      label="Apply"
+      (click)="applyFilter()"
+    ></button>
+  </div>
+</div>
