@@ -28,10 +28,10 @@
     </ng-template>
     <ng-template pTemplate="body" let-e>
       <tr>
-        <td>{{ e.name }}</td>
+        <td>{{ e.name | titlecase }}</td>
         <td>{{ e.date | date : "mediumDate" }}</td>
-        <td>{{ e.department }}</td>
-        <td>EGP {{ e.salary }}</td>
+        <td>{{ e.department | titlecase }}</td>
+        <td>EGP {{ e.salary | groupNumbers }}</td>
         <td>{{ e.expereince | years }}</td>
       </tr>
     </ng-template>

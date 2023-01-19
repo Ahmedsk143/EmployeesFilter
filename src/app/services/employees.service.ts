@@ -10,7 +10,7 @@ export class EmployeesService {
       name: 'Ahmed',
       date: new Date('December 20, 2022 20:17:40 GMT+00:00'),
       expereince: 1,
-      salary: 10000,
+      salary: 9000000,
       department: 'Administration',
     },
     {
@@ -38,7 +38,7 @@ export class EmployeesService {
       name: 'Khalil',
       date: new Date('December 13, 2022 20:17:40 GMT+00:00'),
       expereince: 10,
-      salary: 40000,
+      salary: 400000,
       department: 'Marketing',
     },
     {

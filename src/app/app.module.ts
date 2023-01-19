@@ -16,9 +16,10 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { YearsPipe } from './pipes/years.pipe';
+import { GroupNumbersPipe } from './pipes/group-numbers.pipe';
 
 @NgModule({
-  declarations: [AppComponent, FiltersComponent, EmployeesComponent, YearsPipe],
+  declarations: [AppComponent, FiltersComponent, EmployeesComponent, YearsPipe, GroupNumbersPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
