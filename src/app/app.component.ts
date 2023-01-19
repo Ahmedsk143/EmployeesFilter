@@ -7,7 +7,7 @@ import { SpinnerService } from './services/spinner.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'AngularTask';
+  title = 'Employee Filter';
   isLoading = true;
   constructor(private spinnerService: SpinnerService) {}
   ngOnInit(): void {
