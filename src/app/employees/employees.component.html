@@ -32,7 +32,7 @@
         <td>{{ e.date | date : "mediumDate" }}</td>
         <td>{{ e.department }}</td>
         <td>EGP {{ e.salary }}</td>
-        <td>{{ e.expereince }} Years</td>
+        <td>{{ e.expereince | years }}</td>
       </tr>
     </ng-template>
   </p-table>
